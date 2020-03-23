@@ -1,0 +1,36 @@
+version: '2'
+services:
+   db:
+     container_name: sample_db
+     image: postgres:9.5
+     volumes:
+       - /sample_db:/var/lib/postgresql/data
+     environment:
+       - POSTGRES_PASSWORD=sample
+       - POSTGRES_USER=sample
+       - POSTGRES_DB=postgres
+       - PGDATA=/var/lib/postgresql/data/pgdata
+     ports:
+       - 5432:5432
+ 
+ 
+   products:
+     container_name: products
+     image: nrlilaramani/sample:msproducts
+     environment:
+       - dburl=jdbc:postgresql://db:5432/postgres
+       - dbusername=sample
+       - dbpassword=sample
+       - SPRING_PROFILES_ACTIVE=cloud
+       - redisurl=redis
+       - redisport=6379
+     ports:
+       - 80:80
+		depends_on:
+       - db
+       - redis
+   redis:
+     image: redis:3.0.6
+     ports:
+       - 6379:6379
+ 
