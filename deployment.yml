@@ -7,15 +7,15 @@ metadata:
  annotations:
   cause: "update to 1.7.9"
 spec:
-  replicas: 3
-  selector:
-   matchLabels:
-    app: webserver
-  strategy: 
-   rollingUpdate:
-    maxSurge: 1
-    maxUnavailable: 1
-    type: RollingUpdate
+ replicas: 3
+ selector:
+  matchLabels:
+   app: webserver
+ strategy: 
+  rollingUpdate:
+   maxSurge: 1
+   maxUnavailable: 1
+   type: RollingUpdate
  template:
   metadata:
    labels:
