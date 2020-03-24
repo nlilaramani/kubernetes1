@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: c:\Users\212616565\Downloads\kompose.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: products
+  name: products
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: products
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: c:\Users\212616565\Downloads\kompose.exe convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: products
+    spec:
+      containers:
+      - image: nrlilaramani/sample:products
+        imagePullPolicy: ""
+        name: products
+        ports:
+        - containerPort: 80
+        env:
+        - name: dbusername
+          value: sample
+        - name: dbpassword
+          value: sample
+        - name: dburl
+          value: jdbc:postgresql://postgres:5432/postgres
+        - name: redisurl
+          value: redis
+        - name: redisport
+          value: 6379 
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null 
+status: {}
