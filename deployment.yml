@@ -6,7 +6,7 @@ metadata:
   app: webserver
  annotations:
   cause: "update to 1.7.9"
- spec:
+spec:
   replicas: 3
   selector:
    matchLabels:
@@ -22,7 +22,7 @@ metadata:
     app: webserver
   spec:
    containers:
-    - name: nginx
-      image: nginx:1.7.9
-      ports:
-      - containerPort: 80
+   - name: nginx
+     image: nginx:1.7.9
+     ports:
+     - containerPort: 80
