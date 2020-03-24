@@ -35,7 +35,7 @@ spec:
         - name: dbpassword
           value: sample
         - name: dburl
-          value: jdbc:postgresql://postgres:5432/postgres
+          value: "jdbc:postgresql://postgres:5432/postgres"
         - name: redisurl
           value: redis
         - name: redisport
