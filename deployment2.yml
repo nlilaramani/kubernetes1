@@ -11,15 +11,15 @@ spec:
  selector:
   matchLabels:
     app: webserver
-  strategy: 
-   rollingUpdate:
-    maxSurge: 1
-    maxUnavailable: 1
-   type: RollingUpdate
-  template:
-   metadata:
-    labels:
-     app: webserver
+ strategy: 
+  rollingUpdate:
+   maxSurge: 1
+   maxUnavailable: 1
+  type: RollingUpdate
+ template:
+  metadata:
+   labels:
+    app: webserver
   spec:
    containers:
    - name: nginx
