@@ -8,8 +8,8 @@ metadata:
   cause: "update to 1.13.10"
 spec:
  replicas: 3
-  selector:
-   matchLabels:
+ selector:
+  matchLabels:
     app: webserver
   strategy: 
    rollingUpdate:
