@@ -8,16 +8,16 @@ metadata:
   cause: "update to 1.7.9"
 spec:
  replicas: 3
-  selector:
-   matchLabels:
+ selector:
+  matchLabels:
+   app: webserver
+ template:
+  metadata:
+   labels:
     app: webserver
-  template:
-   metadata:
-    labels:
-     app: webserver
-  spec:
-   containers:
-   - name: nginx
-     image: nginx:1.7.9
-     ports:
-     - containerPort: 80   
+ spec:
+  containers:
+  - name: nginx
+    image: nginx:1.7.9
+    ports:
+    - containerPort: 80
