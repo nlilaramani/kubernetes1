@@ -26,7 +26,7 @@ services:
        - redisport=6379
      ports:
        - 80:80
-    depends_on:
+     depends_on:
        - db
        - redis
    redis:
