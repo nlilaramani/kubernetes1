@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
    db:
      container_name: sample_db
@@ -16,7 +16,7 @@ services:
  
    products:
      container_name: products
-     image: nrlilaramani/sample:msproducts
+     image: nrlilaramani/sample:products
      environment:
        - dburl=jdbc:postgresql://db:5432/postgres
        - dbusername=sample
@@ -26,7 +26,7 @@ services:
        - redisport=6379
      ports:
        - 80:80
-		depends_on:
+    depends_on:
        - db
        - redis
    redis:
