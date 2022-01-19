@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: myapp-green
+ labels:
+  app: webserver
+  dept: hr
+  version: v2  
+ annotations:
+  cause: "update to 1.7.9"
+  author: "Narendra"
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: myapp
+   version: v2
+ strategy: 
+  rollingUpdate:
+   maxSurge: 1
+   maxUnavailable: 1
+  type: RollingUpdate
+ template:
+  metadata:
+   labels:
+    app: myapp
+    version: v2
+  spec:
+   containers:
+   - name: wapp1
+     image: nlpappu/ngimg:v2
+     ports:
+     - containerPort: 80
