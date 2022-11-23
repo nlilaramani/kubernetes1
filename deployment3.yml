@@ -25,4 +25,4 @@ spec:
    - name: pyweb
      image: nlpappu/myrepo:pyweb
      ports:
-     - containerPort: 80
+     - containerPort: 5000
