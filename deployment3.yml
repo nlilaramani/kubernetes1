@@ -23,6 +23,6 @@ spec:
   spec:
    containers:
    - name: pyweb
-     image: nlpappu/myrepo:pyweb
+     image: nlpappu/pyredis:pyweb
      ports:
      - containerPort: 5000
